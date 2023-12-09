@@ -1,15 +1,21 @@
 .square{
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     /* border: 2px solid red; */
     background-color: black;
 }
 
 .container{
-    height: 320px;
-    width: 320px;
+    height: 480px;
+    width: 480px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
