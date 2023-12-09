@@ -6,8 +6,16 @@ function createGrid() {
         let childDiv = document.createElement('div');
         childDiv.className = "square";
         containerDiv.append(childDiv);
+        childDiv.addEventListener("mouseover", randomColour, false);
     }
+
     
 }
 
 createGrid();
+
+function randomColour() {
+    
+
+   
+}
