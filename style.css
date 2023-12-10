@@ -11,14 +11,17 @@
     flex-direction: column;
     flex-wrap: wrap;
     border: 4px solid black;
+    background-color: #cfd8c8;
 }
 
 body {
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+    background-color: #1c3327;
+    font-family: 'Roboto', sans-serif;
 }
 
 .hover {
@@ -27,4 +30,23 @@ body {
 
 #reset {
     margin-bottom: 40px;
+}
+
+button {
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+}
+
+button {
+    background-color: #c7ddd1;
+    font-size: 50px;
+    color: #181F1C;
+    padding: 20px 20px;
+    margin: 15px;
+    border-radius: 5px;
 }
