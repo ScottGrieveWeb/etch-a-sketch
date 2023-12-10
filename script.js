@@ -1,12 +1,19 @@
 
-function createGrid() {
+function createGrid(sizeChoice) {
     const containerDiv = document.querySelector(".container");
 
-    for (let i=0; i < 256; i++) {
+    let size = sizeChoice * sizeChoice;
+
+    for (let i=0; i < size; i++) {
         let childDiv = document.createElement('div');
         childDiv.className = "square";
         childDiv.classList.add(`div${i}`)
         childDiv.addEventListener("mouseover", colourDrawing);
+
+        let squareSize = 480 / sizeChoice;
+        childDiv.style.height = `${squareSize}px`;
+        childDiv.style.width = `${squareSize}px`;
+        console.log(squareSize)
         containerDiv.append(childDiv);
         
     }
@@ -14,7 +21,21 @@ function createGrid() {
     
 }
 
-createGrid();
+function changeHeight() { 
+
+    let grid = document.querySelectorAll('.square');
+
+    let squareSize = 480 / userChoice;
+
+    for ( i = 0; i < grid.length; i++) {
+        grid[i].style.height = `${squareSize}px`;
+        grid[i].style.width = `${squareSize}px`;
+    };
+
+  } 
+
+document.addEventListener("load", createGrid(16));
+
 
 function colourDrawing(e) {
 
@@ -23,16 +44,11 @@ function colourDrawing(e) {
 }
 
 function clearGrid() {
+    let grid = document.querySelector(".container");
 
-    let grid = document.querySelectorAll('.square');
-
-    console.log(grid);
-
-    for ( i = 0; i < grid.length; i++) {
-        grid[i].style.backgroundColor = "white";
-        };
-
-    // grid.style.backgroundColor = 'white';
+        while (grid.firstChild) {
+            grid.firstChild.remove();
+        }
    
 }
 
@@ -47,5 +63,5 @@ function buttonFunc() {
         userChoice = prompt("That's too many squares! The max is 100:")
     } 
 
-    console.log(userChoice);
+    createGrid(userChoice);
 }
