@@ -15,10 +15,15 @@
 body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .hover {
     background-color: black;
+}
+
+#reset {
+    margin-bottom: 40px;
 }
