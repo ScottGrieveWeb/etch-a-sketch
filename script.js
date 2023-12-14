@@ -1,4 +1,5 @@
-
+// Function that runs through a loop based on user's size choice, and creates divs to populate the grid
+// adds an event listener to each div that calls the colourDrawing function on mouse hover
 function createGrid(sizeChoice) {
     const containerDiv = document.querySelector(".container");
 
@@ -21,28 +22,17 @@ function createGrid(sizeChoice) {
     
 }
 
-function changeHeight() { 
-
-    let grid = document.querySelectorAll('.square');
-
-    let squareSize = 480 / userChoice;
-
-    for ( i = 0; i < grid.length; i++) {
-        grid[i].style.height = `${squareSize}px`;
-        grid[i].style.width = `${squareSize}px`;
-    };
-
-  } 
-
+// Adds a default grid on initial page load
 document.addEventListener("load", createGrid(16));
 
-
+// Function that changes the target's background color to black
 function colourDrawing(e) {
 
     e.target.style.backgroundColor = 'black';
    
 }
 
+// Function that goes through all children in the grid and removes them
 function clearGrid() {
     let grid = document.querySelector(".container");
 
@@ -52,6 +42,7 @@ function clearGrid() {
    
 }
 
+// Function that clears the grid and repopulates it based on user's input
 document.getElementById("reset").onclick = buttonFunc;
 
 function buttonFunc() {
